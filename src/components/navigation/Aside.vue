@@ -6,13 +6,15 @@ import menuItems from './index';
 <template>
     <aside class="min-w-[30vw] p-4">
         <ul class="flex flex-col gap-4 items-center">
+            <li>
+                <router-link
+                    to="/"
+                    class="scroll-m-20 text-4xl tracking-tight lg:text-5xl"
+                    >Cedric <span class="font-extrabold">Florentin</span>
+                </router-link>
+            </li>
             <li v-for="(item, index) in menuItems" :key="index">
-                <template v-if="item.type === 'title'">
-                    <h1 class="scroll-m-20 text-4xl tracking-tight lg:text-5xl">
-                        {{ item.text }}
-                    </h1>
-                </template>
-                <template v-else-if="item.type === 'toggle'">
+                <template v-if="item.type === 'toggle'">
                     <component :is="item.component" />
                 </template>
                 <template v-else-if="item.type === 'link'">

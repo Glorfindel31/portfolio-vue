@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import Aside from './components/navigation/Aside.vue';
+import Aside from '@/components/navigation/Aside.vue';
+import DropMenu from '@/components/navigation/DropMenu.vue';
 </script>
 
 <template>
     <div class="flex flex-col min-w-full min-h-screen md:flex-row">
-        <Aside />
+        <Aside class="hidden md:block" />
+        <DropMenu class="block md:hidden" />
         <div class="min-w-full p-4">
             <router-view />
         </div>
